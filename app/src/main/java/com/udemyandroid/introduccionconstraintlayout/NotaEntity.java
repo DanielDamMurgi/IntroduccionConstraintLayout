@@ -22,6 +22,7 @@ public class NotaEntity {
         this.color = color;
     }
 
+
     public int getId() {
         return id;
     }
