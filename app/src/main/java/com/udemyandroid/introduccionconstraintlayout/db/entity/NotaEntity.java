@@ -1,27 +1,29 @@
-package com.udemyandroid.introduccionconstraintlayout;
+package com.udemyandroid.introduccionconstraintlayout.db.entity;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+@Entity(tableName = "notas")
 public class NotaEntity {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    private String titulo;
-    private String Contenido;
-    private boolean favorita;
-    private int color;
+    @ColumnInfo(name = "titulo")
+    public String titulo;
+    public String Contenido;
+    public boolean favorita;
+    public String color;
 
     public NotaEntity() {
     }
 
-    public NotaEntity(int id, String titulo, String contenido, boolean favorita, int color) {
-        this.id = id;
+    public NotaEntity(String titulo, String contenido, boolean favorita, String color) {
         this.titulo = titulo;
         Contenido = contenido;
         this.favorita = favorita;
         this.color = color;
     }
-
 
     public int getId() {
         return id;
@@ -55,11 +57,11 @@ public class NotaEntity {
         this.favorita = favorita;
     }
 
-    public int getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(int color) {
+    public void setColor(String color) {
         this.color = color;
     }
 }

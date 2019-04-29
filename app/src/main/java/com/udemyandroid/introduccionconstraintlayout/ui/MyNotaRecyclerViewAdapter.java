@@ -1,4 +1,4 @@
-package com.udemyandroid.introduccionconstraintlayout;
+package com.udemyandroid.introduccionconstraintlayout.ui;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,11 +8,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.udemyandroid.introduccionconstraintlayout.R;
+import com.udemyandroid.introduccionconstraintlayout.db.entity.NotaEntity;
+
 import java.util.List;
 
 public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecyclerViewAdapter.ViewHolder> {
 
-    private final List<NotaEntity> mValues;
+    private List<NotaEntity> mValues;
     private final Context context;
 
     public MyNotaRecyclerViewAdapter(List<NotaEntity> items, Context context) {
@@ -54,6 +57,11 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
     @Override
     public int getItemCount() {
         return mValues.size();
+    }
+
+    public void setNuevasNotas(List<NotaEntity> nuevasNotas){
+        this.mValues = nuevasNotas;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

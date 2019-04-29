@@ -1,4 +1,4 @@
-package com.udemyandroid.introduccionconstraintlayout;
+package com.udemyandroid.introduccionconstraintlayout.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -7,7 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
 
-public class DashboardActivity extends AppCompatActivity implements NotasInteractionListener{
+import com.udemyandroid.introduccionconstraintlayout.NotasInteractionListener;
+import com.udemyandroid.introduccionconstraintlayout.R;
+import com.udemyandroid.introduccionconstraintlayout.db.entity.NotaEntity;
+
+public class DashboardActivity extends AppCompatActivity implements NotasInteractionListener {
 
     Fragment f = null;
 
